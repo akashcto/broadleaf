@@ -13,39 +13,18 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     <description>My Company's eCommerce Website</description>
-	<repositories>
+    <repositories>
         <repository>
             <id>public snapshots</id>
             <name>public snapshots</name>
-            <url>http://10.114.10.200:8081/nexus/content/repositories/snapshots/</url>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/snapshots/</url>
         </repository>
         <repository>
             <id>public releases</id>
             <name>public releases</name>
-            <url>http://10.114.10.200:8081/nexus/content/repositories/releases/</url>
-        </repository>
-        <repository>
-            <id>newrope</id>
-            <name>public releases</name>
-            <url>http://10.114.10.200:8081/nexus/content/repositories/NewRope/</url>
+            <url>http://nexus.broadleafcommerce.org/nexus/content/repositories/releases/</url>
         </repository>
     </repositories>
-	<distributionManagement>   
-        <repository>
-			<id>deployment</id> 
-			<name>public releases</name> 
-			<url>http://10.114.10.200:8081/nexus/content/repositories/nexus-site/</url> 
-		</repository>
-		<snapshotRepository>                  
-			<id>deployment</id> 
-			<name>public snapshots</name> 
-			<url>http://10.114.10.200:8081/nexus/content/repositories/nexus-site/</url> 
-		</snapshotRepository>
-        <site>
-            <id>nexus-site</id> 
-            <url>http://10.114.10.200:8081/nexus/content/repositories/nexus-site/</url> 
-        </site>
-    </distributionManagement>
     <build>
         <pluginManagement>
             <plugins>
