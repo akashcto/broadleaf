@@ -2,5 +2,3 @@ Checking
 gcchnvjm
 Check Service Hook by Sriram
 Added For Checking By Sriram Mageswaran:
-Adda
-google
