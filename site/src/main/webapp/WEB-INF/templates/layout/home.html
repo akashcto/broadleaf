@@ -14,7 +14,9 @@ will remove the banner on the deployed app.
 2014-06-10 12:48PM CDT Amir Gur
 2014-06-10 01:02PM CDT Amir Gur
 2014-06-10 02:06PM CDT Amir Gur - removing banner to a fake url.
-2014-06-10 41:06PM CDT Amir Gur - re-add banner.
+2014-06-10 14:06PM CDT Amir Gur - re-add banner.
+2014-06-10 15:31PM CDT Amir Gur - re-add banner.
+
 
 -->
 <blc:head pageTitle="Broadleaf Demo - Heat Clinic" />
@@ -29,7 +31,7 @@ will remove the banner on the deployed app.
             
         <blc:content contentType="Homepage Banner Ad" />       
         <div id="banners" th:if="${contentItem}">
-            <a th:href="@{${contentItem['targetUrl']}}"><img th:src="@{${contentItem['imageUrl']}}"          alt="Buy One Get One" /></a>        
+            <a th:href="@{${contentItem['targetUrl']}}"><img th:src="@{${contentItem['imageUrl']}}" alt="Buy One Get One" /></a>        
         </div>
         
         <blc:content contentType="Homepage Middle Promo Snippet" /> 
