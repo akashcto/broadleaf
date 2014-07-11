@@ -32,9 +32,10 @@ Test
         <nav th:substituteby="layout/partials/nav" />
             
         <blc:content contentType="Homepage Banner Ad" />       
-    <div id="banners" th:if="${contentItem}">
-<a th:href="@{${contentItem['targetUrl']}}"><img th:src="@{${contentItem['imageUrl']}}" alt="Buy One Get TWO" /></a>
-        </div>
+   <div id="banners" th:if="${contentItem}">
+<a th:href="@{${contentItem['targetUrl']}}"><img th:src="@{${contentItem['imageUrl']}}" alt="Buy One Get One" /></a>
+</div>
+
 
 
         <blc:content contentType="Homepage Middle Promo Snippet" /> 
