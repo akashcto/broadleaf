@@ -4,22 +4,21 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
 
-
+<!--
+2014-06-10 PM CDT Amir Gur - 
+Updating from:
+    <img th:src="@{${contentItem['imageUrl']}}"          alt="Buy One Get One" />
+to:
+    <img src="/mycompany/img/banners/member-special.jpg" alt="Buy One Get One" />
+will remove the banner on the deployed app.
+-->
 
 <!--
-Updating 
-<img th:src="@{${contentItem['imageUrl']}}"          alt="Buy One Get One" />
-to:
-<img src="/mycompany/img/banners/member-special.jpg" alt="Buy One Get One" />
-will remove the banner on the deployed app.
-
-
+Change history:
 
 2014-06-10 12:48PM CDT Amir Gur
 2014-06-10 01:02PM CDT Amir Gur
 2014-06-10 02:06PM CDT Amir Gur - removing banner to a fake url
-.
-
 2014-06-10 14:06PM CDT Amir Gur - re-add banner.
 2014-06-10 15:31PM CDT Amir Gur - re-add banner.
 Test 2
@@ -30,43 +29,38 @@ Test by Subhash - Sep 10
 Test Subhash - Sep 16-2
 Test Subhash - Oct 16
 2014-10-16 11:20PM PDT Amir Gur - from: img th:src="@{${contentItem['imageUrl']}}" to: img src="/mycompany/img/banners/member-special.jpg" 
-
+2014-10-17 09:42AM PDT Amir Gur - Back to to banner.  Cleaned code and comment/uncomment process for next rounds. 
 -->
+
 
 <blc:head pageTitle="Broadleaf Demo - Heat Clinic" />
 
 <body>
     <div id="notification_bar"></div>
     <header th:substituteby="layout/partials/header" />
-    
     <div id="content" class="width_setter group" role="main">
-    
         <nav th:substituteby="layout/partials/nav" />
-            
         <blc:content contentType="Homepage Banner Ad" />       
-<div id="banners" th:if="${contentItem}">
-<a th:href="@{${contentItem['targetUrl']}}"><img src="/mycompany/img/banners/member-special.jpg"  alt="Buy One Get One" /></a>
-</div>
+
+        <div id="banners" th:if="${contentItem}">
+            <a th:href="@{${contentItem['targetUrl']}}">
+                <!--With banner-->  <img th:src="@{${contentItem['imageUrl']}}"          alt="Buy One Get One" />         
+                <!--No banner  -->  <!--<img src="/mycompany/img/banners/member-special.jpg" alt="Buy One Get One" />-->  
+            </a>
+        </div>
 
         <blc:content contentType="Homepage Middle Promo Snippet" /> 
-        
-        
         <a th:href="@{/register}" th:if="${contentItem}" style="text-decoration:none">
             <div id="home_feature" th:utext="${contentItem['htmlContent']}"></div>
         </a>
-
-        
         <blc:content contentType="Homepage Featured Products Title" />    
         <div th:if="${contentItem}" class="title_bar" th:text="${contentItem['messageText']}"></div>
-        
+    
         <ul id="products" class="group">
             <li th:each="product : ${products}" th:object="${product}" th:include="catalog/partials/productListItem" class="product_container"></li>
         </ul>
     </div>
-    
     <footer th:substituteby="layout/partials/footer" />
-    
-    
 </body>
 </html>
 
